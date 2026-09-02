@@ -1,47 +1,47 @@
-# Aurora Snake
+<div align="center">
 
-A polished take on the classic snake game built with [pygame](https://www.pygame.org/). The game features smooth animations, a reactive gradient backdrop, configurable grid sizes, three vibrant visual themes, audio cues, and elegant menu/game over screens.
+# 🐍 Aurora Snake
 
-## Features
+**Snake, but it glows.**
 
-- **Dynamic visuals** – flowing aurora-inspired gradient, glowing food, and a smoothly interpolated snake movement animation.
-- **Customizable gameplay** – adjust the grid size, movement speed, color theme, and sound toggle directly from the settings screen.
-- **Responsive menus** – mouse-friendly main menu with animated buttons, informative settings view, and a cinematic game-over overlay.
-- **Optional audio** – subtle synthesized tones for apple pickups and collisions that you can enable or disable at any time.
+A flowing aurora backdrop, a snake that slides between cells instead of snapping,
+and three colour themes to lose in.
 
-## Requirements
+</div>
 
-- Python 3.9+
-- `pygame` (install with `pip install pygame`)
+---
 
-## Running the game
+### ✨ What's in it
 
-```bash
+🌌 **A living background** — an aurora-inspired gradient that drifts the whole time you play.
+
+🐍 **Smooth movement** — the snake interpolates between grid cells, so it glides rather than
+teleports. The food glows.
+
+🎨 **Three themes**, a grid size you choose, a speed you choose, and a sound toggle — all from
+the settings screen, no config file.
+
+🔊 **Tones, not samples** — the apple pickup and the crash are synthesised at runtime with
+`generate_tone()`, so the whole game is one file and no assets.
+
+🖱️ **Menus that respond** — animated buttons, a settings view that explains itself, and a
+cinematic game-over overlay.
+
+### 🚀 Play
+
+```sh
+pip install pygame
 python snake_game.py
 ```
 
-Windows users can double-click the file or run it from PowerShell/Command Prompt. A resizable window titled **Aurora Snake** will appear.
+Python 3.9+. Arrow keys or WASD. Escape pauses.
 
-## Controls
+### 🧱 How it's built
 
-### During the game
+One file, ~600 lines, no assets. `Vec2` for grid maths, a `Snake` that owns its own body and
+collision test, `lerp` / `lerp_color` doing all the smoothing, and a settings object that
+clamps itself so a bad value can't crash the game.
 
-- Move: Arrow keys or **WASD**
-- Pause / return to menu: **Esc**
+---
 
-### Main menu
-
-- **Enter / Space**: Start immediately
-- Mouse: Click the on-screen buttons
-
-### Settings screen
-
-- Grid width: `[` / `]` or **Left/Right Arrow**
-- Grid height: `,` / `.` or **Down/Up Arrow**
-- Speed: `-` / `+`
-- Toggle sound: `S`
-- Cycle theme: `T`
-- Start with the chosen settings: **Enter**
-- Return to menu: **Esc**
-
-Enjoy the relaxing glow and challenge yourself to beat your high score!
+<div align="center"><sub>Built with <a href="https://www.pygame.org/">pygame</a></sub></div>
